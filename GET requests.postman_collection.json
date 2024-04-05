@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "6156e403-e5e0-40c4-acc8-8a61833f449a",
+		"name": "GET requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19643867",
+		"_collection_link": "https://www.postman.com/rinaavy/workspace/test/collection/19643867-6156e403-e5e0-40c4-acc8-8a61833f449a?action=share&source=collection_link&creator=19643867"
+	},
+	"item": [
+		{
+			"name": "Get project info by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base url}}/{{api}}/get_project/5",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"{{api}}",
+						"get_project",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get projects list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base url}}/{{api}}/get_projects",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"{{api}}",
+						"get_projects"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{email}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

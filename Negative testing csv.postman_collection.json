@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "a079412e-48f4-4273-9ec9-18fe649ce057",
+		"name": "Negative testing csv",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19643867",
+		"_collection_link": "https://www.postman.com/rinaavy/workspace/test/collection/19643867-a079412e-48f4-4273-9ec9-18fe649ce057?action=share&source=collection_link&creator=19643867"
+	},
+	"item": [
+		{
+			"name": "Create a new project (invalid request csv)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is correct\", function () {\r",
+							"\tpm.iterationData.get(\"status\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"check error message text\", function () {\r",
+							"\tvar jsonData = pm.response.json();\r",
+							"\tpm.expect(jsonData.error).to.contains(pm.iterationData.get(\"error\"));\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\" : \"{{name}}\",\r\n    \"show_announcement\" : {{show_announcement}},\r\n    \"suite_mode\" : {{suite_mode}}\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/{{api}}/add_project",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"{{api}}",
+						"add_project"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{email}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
